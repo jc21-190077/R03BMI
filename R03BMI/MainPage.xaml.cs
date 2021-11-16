@@ -16,8 +16,58 @@ namespace R03BMI
             creater.Text = "JK3A26 田原 伊久弥";
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private void Button_Clicked(object sender, EventArgs e)   
         {
+
+            string height = heighit.Text;
+            string weight = weighit.Text;
+            try
+            {
+                double h = double.Parse(height);
+                double w = double.Parse(weight);
+
+                if (h > 3)
+                {
+                    h = h / 100;
+
+                }
+                if (w > 500)
+                {
+                    w = w / 1000;
+                }
+
+                double bmi = Math.Round(w / (h * h), 1);
+
+                if (bmi < 18.5) {
+                    result.Text = "低体重（痩せ）"+ bmi;
+                }
+                else if(bmi < 25)
+                {
+                    result.Text = "普通体重" + bmi;
+                }
+                else if (bmi < 30)
+                {
+                    result.Text = "肥満（1度）" + bmi;
+                }
+                else if (bmi < 35)
+                {
+                    result.Text = "肥満（2度）" + bmi;
+                }
+                else if (bmi < 40)
+                {
+                    result.Text = "肥満（3度）" + bmi;
+                }
+                else
+                {
+                    result.Text = "肥満（4度）" + bmi;
+                }
+            }
+
+            catch (FormatException ex)
+            {
+                Console.WriteLine(ex);
+                result.Text = "error";
+            }
 
         }
     }
