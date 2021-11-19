@@ -39,34 +39,34 @@ namespace R03BMI
                 double bmi = Math.Round(w / (h * h), 1);
 
                 if (bmi < 18.5) {
-                    result.Text = "低体重（痩せ）"+ bmi;
+                    result.Text = "低体重（痩せ）"+ "  BMI" + bmi;
                 }
                 else if(bmi < 25)
                 {
-                    result.Text = "普通体重" + bmi;
+                    result.Text = "普通体重" + "  BMI" + bmi;
                 }
                 else if (bmi < 30)
                 {
-                    result.Text = "肥満（1度）" + bmi;
+                    result.Text = "肥満（1度）" + "  BMI" + bmi;
                 }
                 else if (bmi < 35)
                 {
-                    result.Text = "肥満（2度）" + bmi;
+                    result.Text = "肥満（2度）" + "  BMI" + bmi;
                 }
                 else if (bmi < 40)
                 {
-                    result.Text = "肥満（3度）" + bmi;
+                    result.Text = "肥満（3度）" + "  BMI" + bmi;
                 }
                 else
                 {
-                    result.Text = "肥満（4度）" + bmi;
+                    result.Text = "肥満（4度）" + "  BMI" + bmi;
                 }
             }
 
             catch (FormatException ex)
             {
                 Console.WriteLine(ex);
-                result.Text = "error";
+                result.Text = "数値を入力してください";
             }
 
         }
